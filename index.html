@@ -246,15 +246,15 @@ body {
 }
 .svc-card.hl { border-color: var(--gold-border); background: var(--gold-bg); }
 .svc-icon { margin-bottom: 10px; }
-.svc-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+.svc-title { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
 .svc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
 .svc-list li {
-  font-size: 14px; color: #555;
-  padding-left: 12px; position: relative; line-height: 1.5;
+  font-size: 13px; color: #555;
+  display: flex; align-items: flex-start; gap: 6px; line-height: 1.5;
 }
 .svc-list li::before {
-  content: "·"; position: absolute; left: 0;
-  color: var(--gold); font-weight: 900; font-size: 16px; line-height: 1;
+  content: "●"; flex-shrink: 0; margin-top: 1px;
+  color: var(--gold); font-size: 8px; line-height: 1.8;
 }
 
 /* PLANS */
@@ -263,17 +263,17 @@ body {
 .plan-card.hot { border-color: var(--gold); }
 .plan-head { padding: 16px 14px; text-align: center; background: var(--gray-bg); }
 .plan-card.hot .plan-head { background: var(--gold); }
-.plan-badge { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--gray); margin-bottom: 4px; }
+.plan-badge { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--gray); margin-bottom: 4px; }
 .plan-card.hot .plan-badge { color: rgba(255,255,255,0.85); }
-.plan-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.plan-name { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
 .plan-card.hot .plan-name { color: #fff; }
-.plan-price { font-size: clamp(22px, 7vw, 34px); font-weight: 900; color: var(--navy); letter-spacing: -1px; line-height: 1; }
+.plan-price { font-size: clamp(18px, 6vw, 34px); font-weight: 900; color: var(--navy); letter-spacing: -1px; line-height: 1; }
 .plan-card.hot .plan-price { color: #fff; }
-.plan-price sup { font-size: clamp(11px, 3vw, 16px); vertical-align: 0.3em; letter-spacing: 0; }
-.plan-price span { font-size: clamp(11px, 3vw, 15px); font-weight: 500; letter-spacing: 0; }
+.plan-price sup { font-size: clamp(10px, 2.5vw, 16px); vertical-align: 0.3em; letter-spacing: 0; }
+.plan-price span { font-size: clamp(10px, 2.5vw, 15px); font-weight: 500; letter-spacing: 0; }
 .plan-body { padding: 14px; background: #fff; }
 .plan-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.plan-items li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: #444; line-height: 1.5; }
+.plan-items li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #444; line-height: 1.5; }
 .plan-items li::before { content: "✓"; color: var(--green); font-weight: 900; flex-shrink: 0; }
 
 /* CONTACT */
@@ -325,6 +325,24 @@ body {
   margin-top: 8px;
   line-height: 1.6;
   letter-spacing: 0;
+}
+/* LINE 內嵌瀏覽器窄螢幕補強 */
+@media screen and (max-width: 390px) {
+  body { padding-bottom: 32px; }
+  .hero h1 { font-size: 22px; }
+  .hero-sub-inline { font-size: 14px; }
+  .savings-num { font-size: clamp(26px, 8vw, 48px); }
+  .sec { padding: 24px 14px 0; }
+  .sec-title { font-size: 17px; }
+  .svc-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .svc-card { padding: 12px 10px; }
+  .plan-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .plan-head { padding: 12px 10px; }
+  .plan-body { padding: 10px; }
+  .cmp-side p { font-size: 13px; }
+  .contact { padding: 24px 16px; }
+  .contact-name { font-size: 19px; }
+  .line-qr-img { width: 130px; height: 130px; }
 }
 </style>
 </head>
@@ -602,7 +620,7 @@ body {
       </div>
       <div>
         <div class="val-title">新廠 IT 基礎建設規劃</div>
-        <div class="val-desc">桃園龜山新廠啟用後，可同步規劃網路架構、NAS 備份與資安監控，全程陪跑。</div>
+        <div class="val-desc">桃園龜山新廠啟用後，可同步規劃網路架構、設備部署與資安監控，全程陪跑。</div>
       </div>
     </div>
 
@@ -636,22 +654,19 @@ body {
     <div class="svc-card">
       <div class="svc-icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="4" width="11" height="11" rx="2" stroke="#1B3A6B" stroke-width="1.4" fill="#EEF3FF"/>
-          <rect x="17" y="4" width="11" height="11" rx="2" stroke="#2A5298" stroke-width="1.4" fill="#EEF3FF"/>
-          <rect x="4" y="17" width="11" height="11" rx="2" stroke="#D4870A" stroke-width="1.4" fill="#FFF8EE"/>
-          <rect x="17" y="17" width="11" height="11" rx="2" stroke="#1A7A50" stroke-width="1.4" fill="#EAF7F1"/>
-          <path d="M9.5 10h3M9.5 12.5h1.5" stroke="#1B3A6B" stroke-width="1" stroke-linecap="round"/>
-          <path d="M22 10h3M22 12.5h1.5" stroke="#2A5298" stroke-width="1" stroke-linecap="round"/>
-          <path d="M9.5 23h3M9.5 25.5h1.5" stroke="#D4870A" stroke-width="1" stroke-linecap="round"/>
-          <path d="M22 23l1.5 1.5 2.5-2.5" stroke="#1A7A50" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="3" y="7" width="26" height="18" rx="2.5" stroke="#1B3A6B" stroke-width="1.4" fill="#EEF3FF"/>
+          <rect x="6" y="10" width="8" height="5" rx="1" stroke="#2A5298" stroke-width="1" fill="none"/>
+          <path d="M18 12h6M18 15h4" stroke="#D4870A" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 19h20" stroke="#2A5298" stroke-width="1" stroke-linecap="round"/>
+          <path d="M12 25v-2M20 25v-2M8 25h16" stroke="#1B3A6B" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="svc-title">資料中樞與備份防護</div>
+      <div class="svc-title">辦公設備與軟硬體維護</div>
       <ul class="svc-list">
-        <li>NAS 多重備份設定</li>
-        <li>勒索病毒防護</li>
-        <li>內部資料庫建置</li>
-        <li>權限控管</li>
+        <li>電腦組裝與升級規劃</li>
+        <li>軟硬體問題排查修復</li>
+        <li>作業系統更新維護</li>
+        <li>周邊設備安裝設定</li>
       </ul>
     </div>
 
@@ -707,7 +722,7 @@ body {
       <div class="plan-body">
         <ul class="plan-items">
           <li>企業 IT 環境總體檢</li>
-          <li>NAS 備份偵測報告</li>
+          <li>電腦軟硬體健康評估</li>
           <li>8 次遠端連線支援</li>
           <li>系統優化建議書</li>
         </ul>
@@ -723,7 +738,7 @@ body {
         <ul class="plan-items">
           <li>無限次遠端救援與諮詢</li>
           <li>每月 1 次實體到場急救</li>
-          <li>NAS 定期巡檢與防護</li>
+          <li>軟硬體更新維護管理</li>
           <li>網路流量與資安監控</li>
         </ul>
       </div>
