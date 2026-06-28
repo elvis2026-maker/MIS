@@ -112,31 +112,16 @@ body {
 }
 
 /* PAIN */
-.pain-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.pain-item {
+.pain-brief {
   background: var(--gray-bg);
-  border-radius: 12px;
-  padding: 16px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.pain-icon svg { display: block; }
-.pain-item-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.3;
-}
-.pain-item-desc {
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 14px 16px;
   font-size: 14px;
-  color: var(--gray);
-  line-height: 1.6;
+  color: #444;
+  line-height: 1.8;
 }
+.pain-brief strong { color: var(--navy); font-weight: 700; }
 
 /* COST TABLE */
 .cost-wrap {
@@ -279,6 +264,15 @@ body {
 .plan-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .plan-items li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #444; line-height: 1.5; }
 .plan-items li::before { content: "✓"; color: var(--green); font-weight: 900; flex-shrink: 0; }
+.plan-upgrade-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--gold-border);
+  font-size: 11.5px;
+  color: var(--gold);
+  font-weight: 700;
+  line-height: 1.4;
+}
 
 /* CONTACT */
 .contact {
@@ -366,61 +360,10 @@ body {
   </div>
 </div>
 
-<!-- PAIN POINTS -->
+<!-- PAIN POINTS (簡化版) -->
 <div class="sec">
-  <div class="sec-head"><div class="sec-bar"></div><div class="sec-title">企業 IT 的四大隱憂</div></div>
-  <div class="pain-grid">
-
-    <div class="pain-item">
-      <div class="pain-icon">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="14" stroke="#1B3A6B" stroke-width="1.5" fill="#EEF3FF"/>
-          <path d="M16 9v8" stroke="#D4870A" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="16" cy="22" r="1.5" fill="#D4870A"/>
-        </svg>
-      </div>
-      <div class="pain-item-title">招募曠日費時</div>
-      <div class="pain-item-desc">從刊登職缺到新人上手，平均耗時 6–9 個月，空窗損失持續累積。</div>
-    </div>
-
-    <div class="pain-item">
-      <div class="pain-icon">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="8" width="24" height="17" rx="3" stroke="#1B3A6B" stroke-width="1.5" fill="#EEF3FF"/>
-          <path d="M10 14h12M10 19h7" stroke="#D4870A" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="25" cy="10" r="4" fill="#B93535"/>
-          <path d="M23.5 10h3M25 8.5v3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="pain-item-title">技能要求多元</div>
-      <div class="pain-item-desc">ERP、網站、CRM、資安——單一員工難以全面兼顧。</div>
-    </div>
-
-    <div class="pain-item">
-      <div class="pain-icon">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <path d="M16 4C11 4 7 8 7 13c0 6 9 15 9 15s9-9 9-15c0-5-4-9-9-9z" stroke="#1B3A6B" stroke-width="1.5" fill="#EEF3FF"/>
-          <circle cx="16" cy="13" r="3" stroke="#D4870A" stroke-width="1.5" fill="none"/>
-          <path d="M21 24c2 0.5 3 1.5 3 2.5" stroke="#B93535" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="pain-item-title">人員流動風險</div>
-      <div class="pain-item-desc">員工離職即斷線，系統知識難傳承，重新招募再耗半年。</div>
-    </div>
-
-    <div class="pain-item">
-      <div class="pain-icon">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect x="5" y="5" width="22" height="22" rx="3" stroke="#1B3A6B" stroke-width="1.5" fill="#EEF3FF"/>
-          <path d="M5 13h22" stroke="#D4870A" stroke-width="1.5"/>
-          <path d="M10 9h.01M14 9h.01M18 9h.01" stroke="#1B3A6B" stroke-width="2" stroke-linecap="round"/>
-          <path d="M10 19l3 3 6-6" stroke="#B93535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="pain-item-title">隱性成本龐大</div>
-      <div class="pain-item-desc">薪資外還有勞健保、退休金、獎金、設備——實際成本超乎預期。</div>
-    </div>
-
+  <div class="pain-brief">
+    自聘 IT 人員常見痛點：<strong>招募耗時 6–9 個月</strong>、<strong>技能難以全面</strong>、<strong>人員流動知識斷層</strong>、<strong>隱性成本（勞健保、獎金、設備）超乎預期</strong>——以下是自聘與外包的實際成本比較：
   </div>
 </div>
 
@@ -601,7 +544,7 @@ body {
       </div>
       <div>
         <div class="val-title">製造業 IT 顧問背景</div>
-        <div class="val-desc">11 年 MIS ＋ 20 年董助資歷，深度理解製造業流程，跨部門溝通零障礙。</div>
+        <div class="val-desc">13 年 MIS ＋ 23 年董助資歷，深度理解製造業流程，跨部門溝通零障礙。</div>
       </div>
     </div>
 
@@ -697,35 +640,36 @@ body {
     <div class="plan-card">
       <div class="plan-head">
         <div class="plan-badge">方案 A</div>
-        <div class="plan-name">首月體驗健檢</div>
-        <div class="plan-price"><sup>NT$</sup>5,000<span>/首月</span></div>
+        <div class="plan-name">輕量守護方案</div>
+        <div class="plan-price"><sup>NT$</sup>5,000<span>/月</span></div>
       </div>
       <div class="plan-body">
         <ul class="plan-items">
-          <li>企業 IT 環境總體檢</li>
-          <li>電腦軟硬體健康評估</li>
           <li>8 次遠端連線支援</li>
-          <li>系統優化建議書</li>
+          <li>軟硬體基礎健檢</li>
+          <li>系統異常排除（遠端）</li>
+          <li>使用者軟體協助更新安裝（遠端）</li>
         </ul>
       </div>
     </div>
     <div class="plan-card hot">
       <div class="plan-head">
         <div class="plan-badge">🔥 推薦 · 方案 B</div>
-        <div class="plan-name">企業全方位即時守護</div>
+        <div class="plan-name">企業全方位 IT 守護</div>
         <div class="plan-price"><sup>NT$</sup>8,000<span>/月</span></div>
       </div>
       <div class="plan-body">
         <ul class="plan-items">
-          <li>無限次遠端救援與諮詢</li>
-          <li>每月 1 次實體到場急救</li>
-          <li>軟硬體更新維護管理</li>
-          <li>網路流量與資安監控</li>
+          <li><strong>無限次</strong>遠端救援與諮詢</li>
+          <li>緊急狀況可安排到場協助</li>
+          <li>軟硬體<strong>定期</strong>健檢與更新維護</li>
+          <li>協助公司系統 E 化作業</li>
         </ul>
+        <div class="plan-upgrade-note">＊ 完整涵蓋 A 方案項目，遠端支援次數無上限</div>
       </div>
     </div>
   </div>
-  <p class="cost-note" style="margin-top:10px">※ 常規到場檢修另計 $500–$800/小時；重大硬體升級另行報價。</p>
+  <p class="cost-note" style="margin-top:10px">※ 方案 B 緊急狀況到場每月 1 次免費，超出次數或常規到場檢修另計 $800/小時；重大硬體升級另行報價；以上方案皆為年約。</p>
 </div>
 
 <!-- CONTACT -->
