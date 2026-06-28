@@ -149,28 +149,28 @@ body {
 }
 .cost-thead {
   display: grid;
-  grid-template-columns: 5fr 4fr 4fr 4fr;
+  grid-template-columns: 4fr 4fr 4fr;
   background: var(--navy);
   color: #fff;
   min-width: 0;
 }
 .cost-thead > div {
-  padding: 10px 4px;
-  font-size: clamp(10px, 2.8vw, 13px);
-  font-weight: 700;
+  padding: 14px 4px;
+  font-size: clamp(13px, 4vw, 18px);
+  font-weight: 900;
   text-align: center;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
   line-height: 1.4;
   overflow: hidden;
   word-break: break-all;
 }
-.cost-thead > div:first-child { text-align: left; padding-left: 8px; }
+.cost-thead > div:first-child { text-align: left; padding-left: 8px; font-size: clamp(11px, 2.8vw, 14px); font-weight: 700; }
 .th-hire { color: #FFA8A8; }
 .th-out  { color: #80E8BC; }
 
 .cost-row {
   display: grid;
-  grid-template-columns: 5fr 4fr 4fr 4fr;
+  grid-template-columns: 4fr 4fr 4fr;
   border-bottom: 1px solid var(--border);
   min-width: 0;
 }
@@ -184,10 +184,12 @@ body {
 .cv-out.zero { font-weight: 800; }
 .cost-row:nth-child(even) .cv-hire { background: #FAE8E8; }
 .cost-row:nth-child(even) .cv-out  { background: #E0F3EB; }
+.cv-main { display: block; font-size: 1.08em; font-weight: 800; }
+.cv-sub  { display: block; font-size: 0.74em; font-weight: 500; opacity: 0.75; margin-top: 1px; }
 
 .cost-total {
   display: grid;
-  grid-template-columns: 5fr 4fr 4fr 4fr;
+  grid-template-columns: 4fr 4fr 4fr;
   border-top: 2px solid var(--border);
   min-width: 0;
 }
@@ -195,6 +197,8 @@ body {
 .cost-total > div:first-child { background: var(--navy); color: #fff; text-align: left; padding-left: 8px; font-size: clamp(11px, 2.8vw, 15px); }
 .ct-hire { background: var(--red); color: #fff; }
 .ct-out  { background: var(--green); color: #fff; }
+.ct-main { display: block; font-size: 1.1em; }
+.ct-sub  { display: block; font-size: 0.7em; font-weight: 600; opacity: 0.8; margin-top: 1px; }
 .cost-note { font-size: 13px; color: #aaa; margin-top: 8px; }
 
 /* COMPARE */
@@ -357,8 +361,8 @@ body {
   <h1>別讓 IT 空窗，成為隱形成本<br><span class="hero-sub-inline">自聘工程師的全年負擔，遠超您的想像。讓數字說話。</span></h1>
   <div class="savings-card">
     <div class="savings-label">選擇外包，每年實質節省</div>
-    <div class="savings-num"><sup>NT$</sup>619,800<sub>+</sub></div>
-    <div class="savings-note">相當於 7.7 個月的外包費用，還多出網站開發等附加價值</div>
+    <div class="savings-num"><sup>NT$</sup>681,800<sub>+</sub></div>
+    <div class="savings-note">相當於 7.1 個月的外包費用，還多出網站開發等附加價值</div>
   </div>
 </div>
 
@@ -422,63 +426,50 @@ body {
 
 <!-- COST TABLE -->
 <div class="sec">
-  <div class="sec-head"><div class="sec-bar"></div><div class="sec-title">每月 vs 全年成本試算</div></div>
+  <div class="sec-head"><div class="sec-bar"></div><div class="sec-title">自聘 VS 外包 每年(月)成本試算</div></div>
   <div class="cost-wrap">
     <div class="cost-thead">
       <div>費用項目</div>
-      <div class="th-out">✅ 外包<br>全年</div>
-      <div class="th-hire">❌ 自聘<br>每月</div>
-      <div class="th-hire">❌ 自聘<br>全年</div>
+      <div class="th-hire">❌ 自聘</div>
+      <div class="th-out">✅ 外包</div>
     </div>
     <div class="cost-row">
-      <div>月薪／服務費</div>
-      <div class="cv-out">$96,000</div>
-      <div class="cv-hire">$45,000</div>
-      <div class="cv-hire">$540,000</div>
+      <div>薪資／服務費</div>
+      <div class="cv-hire"><span class="cv-main">$540,000</span><span class="cv-sub">(45,000/月)</span></div>
+      <div class="cv-out"><span class="cv-main">$96,000</span><span class="cv-sub">(8,000/月)</span></div>
     </div>
     <div class="cost-row">
       <div>勞保（雇主）</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">$3,000</div>
-      <div class="cv-hire">$36,000</div>
+      <div class="cv-hire"><span class="cv-main">$36,000</span><span class="cv-sub">(3,000/月)</span></div>
+      <div class="cv-out zero"><span class="cv-main">$0</span></div>
     </div>
     <div class="cost-row">
       <div>健保（雇主）</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">$1,200</div>
-      <div class="cv-hire">$14,400</div>
+      <div class="cv-hire"><span class="cv-main">$14,400</span><span class="cv-sub">(1,200/月)</span></div>
+      <div class="cv-out zero"><span class="cv-main">$0</span></div>
     </div>
     <div class="cost-row">
       <div>勞退提撥 6%</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">$2,700</div>
-      <div class="cv-hire">$32,400</div>
+      <div class="cv-hire"><span class="cv-main">$32,400</span><span class="cv-sub">(2,700/月)</span></div>
+      <div class="cv-out zero"><span class="cv-main">$0</span></div>
     </div>
     <div class="cost-row">
-      <div>年終獎金</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">—</div>
-      <div class="cv-hire">$45,000</div>
-    </div>
-    <div class="cost-row">
-      <div>招募培訓</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">—</div>
-      <div class="cv-hire">$30,000</div>
+      <div>三節獎金</div>
+      <div class="cv-hire"><span class="cv-main">$135,000</span><span class="cv-sub">(3個月薪水)</span></div>
+      <div class="cv-out zero"><span class="cv-main">$0</span></div>
     </div>
     <div class="cost-row">
       <div>座位設備</div>
-      <div class="cv-out zero">$0</div>
-      <div class="cv-hire">$1,500</div>
-      <div class="cv-hire">$18,000</div>
+      <div class="cv-hire"><span class="cv-main">$20,000</span></div>
+      <div class="cv-out zero"><span class="cv-main">$0</span></div>
     </div>
     <div class="cost-total">
       <div>全年總支出</div>
-      <div class="ct-out">$96,000</div>
-      <div class="ct-hire" colspan="2">$715,800</div>
+      <div class="ct-hire"><span class="ct-main">$777,800</span><span class="ct-sub">(約64,817/月)</span></div>
+      <div class="ct-out"><span class="ct-main">$96,000</span><span class="ct-sub">(8,000/月)</span></div>
     </div>
   </div>
-  <p class="cost-note">※ 保守估算，實際因薪資結構與規模而異。差距：<strong style="color:var(--red)">NT$619,800</strong></p>
+  <p class="cost-note">※ 保守估算，實際因薪資結構與規模而異。差距：<strong style="color:var(--red)">NT$681,800</strong></p>
 </div>
 
 <!-- COMPARISON -->
@@ -538,7 +529,7 @@ body {
       </div>
       <div class="cmp-body">
         <div class="cmp-side side-h"><div class="cmp-lbl">❌ 自聘</div><p>業務淡旺季，薪資固定支出無法彈性調整</p></div>
-        <div class="cmp-side side-o"><div class="cmp-lbl">✅ 外包</div><p>依需求隨時擴充，新廠啟用可即時跟進</p></div>
+        <div class="cmp-side side-o"><div class="cmp-lbl">✅ 外包</div><p>依需求隨時擴充，業務成長或新據點可即時跟進</p></div>
       </div>
     </div>
 
@@ -592,7 +583,7 @@ body {
       </div>
       <div>
         <div class="val-title">客製化工具軟體開發</div>
-        <div class="val-desc">依業務需求開發專屬工具：報表自動化、ERP 輔助模組、倉儲追蹤系統。</div>
+        <div class="val-desc">可依公司需求開發專屬線上工具：報表自動化、會計E化模組、倉儲庫存Bar Code盤點系統。</div>
       </div>
     </div>
 
@@ -609,23 +600,8 @@ body {
       </div>
     </div>
 
-    <div class="val-item">
-      <div class="val-icon">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <rect x="5" y="14" width="10" height="14" rx="2" stroke="#1B3A6B" stroke-width="1.5" fill="#EEF3FF"/>
-          <rect x="21" y="8" width="10" height="20" rx="2" stroke="#2A5298" stroke-width="1.5" fill="#EEF3FF"/>
-          <rect x="13" y="11" width="10" height="17" rx="2" stroke="#D4870A" stroke-width="1.5" fill="#FFF8EE"/>
-          <path d="M5 32h26" stroke="#1B3A6B" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div>
-        <div class="val-title">新廠 IT 基礎建設規劃</div>
-        <div class="val-desc">桃園龜山新廠啟用後，可同步規劃網路架構、設備部署與資安監控，全程陪跑。</div>
-      </div>
-    </div>
-
   </div>
-  <p class="cost-note" style="margin-top:10px">※ 月費方案已涵蓋日常 IT 維運支援；網站開發、客製化工具軟體、新廠基礎建設等專案型工作，開發費用依需求另行報價。</p>
+  <p class="cost-note" style="margin-top:10px">※ 月費方案已涵蓋日常 IT 維運支援；網站開發、客製化工具軟體等專案型工作，開發費用依需求另行報價。</p>
 </div>
 <div class="sec">
   <div class="sec-head"><div class="sec-bar"></div><div class="sec-title">核心服務項目</div></div>
